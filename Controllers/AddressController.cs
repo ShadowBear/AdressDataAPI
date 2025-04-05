@@ -37,6 +37,15 @@ namespace AdressDataAPI.Controllers
             return address;
         }
 
+        [HttpGet("search")]
+        public async Task<IActionResult> Search([FromQuery] string aktenzeichen)
+        {
+            if (string.IsNullOrEmpty(aktenzeichen)) return BadRequest("Missing search input");
+
+            var addresses = await _context.Addresses.Where(item => item.Aktenzeichen == aktenzeichen).OrderByDescending(item => item.AktuelleAnschrift).ToListAsync();
+            return Ok(addresses);
+        }
+
         // POST: api/address
         [HttpPost]
         public async Task<ActionResult<Address>> PostAddress(Address address)

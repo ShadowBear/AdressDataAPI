@@ -30,6 +30,13 @@ namespace AdressDataAPI.Controllers
             return contactInfo == null ? NotFound() : contactInfo;            
         }
 
+        [HttpGet("byfileid")]
+        public async Task<ActionResult<ContactInfo>> GetContactInfosByFileId([FromQuery] int fileId)
+        {
+            var contactInfos = await _context.Contacts.Where(item => item.FileID == fileId).ToListAsync();
+            return Ok(contactInfos);
+        }
+
         [HttpPost]
         public async Task <ActionResult<ContactInfo>> PostContactInfo(ContactInfo contactInfo)
         {
