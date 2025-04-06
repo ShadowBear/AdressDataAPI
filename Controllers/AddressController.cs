@@ -1,5 +1,5 @@
 ﻿using AdressDataAPI.Data;
-using AdressDataAPI.Models;
+using AddressList.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

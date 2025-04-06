@@ -1,7 +1,7 @@
 ﻿using AdressDataAPI.Data;
-using AdressDataAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using AddressList.Shared.Models;
 
 namespace AdressDataAPI.Controllers
 {

@@ -1,4 +1,4 @@
-﻿using AdressDataAPI.Models;
+﻿using AddressList.Shared.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace AdressDataAPI.Data
